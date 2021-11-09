@@ -3,19 +3,13 @@ language: python
 python:
   - 3.8
 
-env:
-  global:
-    - PIPENV_VENV_IN_PROJECT=1
-    - PIPENV_IGNORE_VIRTUALENVS=1
-
 install:
-  - pip install pipenv
-  - pipenv sync -d
+  - pip install -r requirements-dev.txt
   - cp contrib/env-sample .env
 
 script:
-  - pipenv run flake8 .
-  - pipenv run pytest --cov=pypro
+  - flake8
+  - pytest --cov=pypro
 
 after_success:
-  - pipenv run codecov
+  - codecov
