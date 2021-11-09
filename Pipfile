@@ -10,6 +10,7 @@ gunicorn = "*"
 pytest-django = "*"
 python-decouple = "*"
 confi = "*"
+dj-database-url = "*"
 
 [dev-packages]
 flake8 = "*"
